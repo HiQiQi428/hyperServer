@@ -52,7 +52,6 @@ int main(int argn, char **argv) {
     inet_pton(AF_INET, SERVER_IP, &serverAddr.sin_addr);
 
     ret = bind (serverFd, (struct sockaddr*) &serverAddr, sizeof (serverAddr));
-    printf ("[hyper-server] startup finished on %s:%d\n", SERVER_IP, SERVER_PORT);
     if (ret != 0) {
         close (serverFd);
         printf ("[hyper-server] bind error: %s\n", strerror (errno));
@@ -65,6 +64,7 @@ int main(int argn, char **argv) {
         printf ("[hyper-server] listen error: %s\n", strerror (errno));
         exit (-1);
     }
+    printf ("[hyper-server] startup finished on %s:%d\n", SERVER_IP, SERVER_PORT);
 
     len = sizeof (clientAddr);
     bzero (&clientAddr, sizeof (clientAddr));
