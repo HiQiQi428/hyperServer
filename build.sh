@@ -1,0 +1,1 @@
+gcc -g -o bin/hyperServer server.c http.c dataType.c threadPool.c util.c -lpthread
