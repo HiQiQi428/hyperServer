@@ -14,6 +14,9 @@
 #define SERVER_PORT 8000
 #define CONCURRENT_NUM 10
 
+// TODO 支持chunk传送
+// TODO 去除'\r'
+
 ThreadPool *threadPool;
 Dispatcher *dispatcher;
 
